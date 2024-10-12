@@ -1,4 +1,4 @@
-<div [className]="['flex flex-row h-full -ml-8 bg-slate-200']">
+<div [className]="['flex flex-row h-full -ml-0 md:-ml-8 bg-slate-200']">
   <app-layouts></app-layouts>
   <div
     [className]="[
@@ -95,15 +95,46 @@
           'flex flex-col bg-white md:w-1/3 w-full h-96 rounded-md shadow-sm'
         ]"
       >
-        <p [className]="['font-semibold']">Medications</p>
+        <p [className]="['font-semibold mx-3 mt-2']">Medications</p>
         <div [className]="['flex flex-col mt-10 mx-3 space-y-5']">
-          <span [className]="['text-sm font-thin']">Econochlor (chloramphenicol-oral)</span>
-          <span [className]="['text-sm font-thin']"> Desmopressin tabs</span>
-          <span [className]="['text-sm font-thin']">Abciximab-injection</span>
-          <span [className]="['text-sm font-thin']">Kevzara sarilumab</span>
-          <span [className]="['text-sm font-thin']"> Gentamicin-topical</span>
-          <span [className]="['text-sm font-thin']">Paliperidone palmitate</span>
-          <span [className]="['text-sm font-thin']"> Sermorelin-injectable</span>
+          <div [className]="['flex justify-between']">
+            <span [className]="['text-xs font-thin']"
+              >Econochlor (chloramphenicol-oral)</span
+            >
+            <span [className]="['text-xs font-thin']">1-0-1</span>
+          </div>
+          <div [className]="['flex justify-between']">
+            <span [className]="['text-xs font-thin']"> Desmopressin tabs</span>
+            <span [className]="['text-xs font-thin']">1-0-1</span>
+          </div>
+          <div [className]="['flex justify-between']">
+            <span [className]="['text-xs font-thin']">Abciximab-injection</span>
+            <span [className]="['text-xs font-thin']">1-0-1</span>
+          </div>
+
+          <div [className]="['flex justify-between']">
+            <span [className]="['text-xs font-thin']">Kevzara sarilumab</span>
+            <span [className]="['text-xs font-thin']">1-0-1</span>
+          </div>
+
+          <div [className]="['flex justify-between']">
+            <span [className]="['text-xs font-thin']"> Gentamicin-topical</span>
+            <span [className]="['text-xs font-thin']">1-0-1</span>
+          </div>
+
+          <div [className]="['flex justify-between']">
+            <span [className]="['text-xs font-thin']"
+              >Paliperidone palmitate</span
+            >
+            <span [className]="['text-xs font-thin']">1-0-1</span>
+          </div>
+
+          <div [className]="['flex justify-between']">
+            <span [className]="['text-xs font-thin']">
+              Sermorelin-injectable</span
+            >
+            <span [className]="['text-xs font-thin']">1-0-1</span>
+          </div>
         </div>
       </div>
     </div>

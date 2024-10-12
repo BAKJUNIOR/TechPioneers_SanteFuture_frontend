@@ -7,6 +7,8 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AppointmentsComponent } from './views/appointments/appointments.component';
 import { CarnetComponent } from './views/carnet/carnet.component';
 import { HomeDashboardComponent } from './views/home-dashboard/home-dashboard.component';
+import { SettingsComponent } from './views/settings/settings.component';
+import { DoctorsComponent } from './views/doctors/doctors.component';
 
 export const routes: Routes = [
 
@@ -36,7 +38,9 @@ export const routes: Routes = [
             // { path: "", component: DashboardComponent},
             { path: "", component: HomeDashboardComponent},
             { path: "appointments", component: AppointmentsComponent},
-            { path: "carnet", component: CarnetComponent}
+            { path: "carnet", component: CarnetComponent},
+            { path: "settings", component: SettingsComponent},
+            { path: "doctors", component: DoctorsComponent}
         ]
     },
 
@@ -53,4 +57,5 @@ export const routes: Routes = [
             { path: "infos", component: ConsultationComponent }
         ]
     }
+    
 ];

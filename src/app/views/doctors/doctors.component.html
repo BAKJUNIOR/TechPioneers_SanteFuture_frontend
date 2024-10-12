@@ -1,0 +1,64 @@
+<div class="flex flex-row h-screen bg-[#f0f3fb] -ml-0 md:-ml-8">
+    <app-layouts></app-layouts>
+    <div
+      [className]="[
+        'flex flex-col w-full md:w-full md:h-full h-full py-24 xl:mb-0 mt-6 '
+      ]"
+    >
+      <div
+        [className]="[
+          'flex flex-row md:flex-col justify-between p-4 space-y-0 md:space-y-10'
+        ]"
+      >
+        <div
+          [className]="[
+            'flex flex-col bg-white md:w-full w-full  rounded-xl shadow-sm '
+          ]"
+        >
+          <div
+            [className]="['flex flex-col space-y-4 w-full justify-between  p-4']"
+          >
+            <p [className]="['font-bold text-md text-gray-600']">
+              Paramètre de sécurité
+            </p>
+            <input
+              [className]="[
+                'flex w-full px-3 py-4 rounded border border-gray-400 '
+              ]"
+              type="text"
+              [placeholder]="['Username']"
+            />
+            <input
+              [className]="[
+                'flex w-full px-3 py-4 rounded border border-gray-400 '
+              ]"
+              type="text"
+              [placeholder]="['Ancien mot de passe']"
+            />
+            <input
+              [className]="[
+                'flex w-full px-3 py-4 rounded border border-gray-400 '
+              ]"
+              type="text"
+              [placeholder]="['Nouveau mot de passe']"
+            />
+  
+            <div [className]="['flex']">
+              <button
+                [className]="[
+                  'flex  bg-blue-400 hover:bg-blue-600 text-white px-4 py-3 rounded shadow-md'
+                ]"
+                type="submit"
+              >
+                Enregistrer
+              </button>
+            </div>
+          </div>
+        </div>
+  
+       
+      </div>
+      <!-- </div> -->
+    </div>
+  </div>
+  

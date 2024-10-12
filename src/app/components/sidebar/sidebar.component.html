@@ -82,8 +82,10 @@
       <!-- Navigation -->
 
       <!-- Heading -->
-      <a [routerLink]="['/dashboard']"
-        class="md:min-w-full text-blueGray-500 text-xs font-bold block pt-1 pb-4 no-underline cursor-pointer"
+      <a
+        routerLink="/dashboard"
+        [routerLinkActive]="['bg-blue-400']"
+        class="md:min-w-full text-blueGray-500 px-2 rounded text-xs font-bold block pt-1 pb-4 no-underline cursor-pointer"
       >
         Dashboard
       </a>
@@ -92,8 +94,10 @@
       <hr class="my-4 md:min-w-full" />
       <!-- Heading -->
 
-      <a [routerLink]="['/dashboard/appointments']"
-        class="md:min-w-full text-blueGray-500 text-xs font-bold block pt-1 pb-4 no-underline cursor-pointer"
+      <a
+        routerLink="/dashboard/appointments"
+        [routerLinkActive]="['bg-blue-400']"
+        class="md:min-w-full text-blueGray-500 px-2 rounded text-xs font-bold block pt-1 pb-4 no-underline cursor-pointer"
       >
         Rendez-vous
       </a>
@@ -102,18 +106,33 @@
       <!-- Divider -->
       <hr class="my-4 md:min-w-full" />
       <!-- Heading -->
-      <a [routerLink]="['/dashboard/carnet']"
-        class="md:min-w-full text-blueGray-500 text-xs font-bold block pt-1 pb-4 no-underline cursor-pointer"
+      <a
+        routerLink="/dashboard/carnet"
+        [routerLinkActive]="['bg-blue-400']"
+        class="md:min-w-full text-blueGray-500 px-2 rounded text-xs font-bold block pt-1 pb-4 no-underline cursor-pointer"
       >
         Mon Carnet
       </a>
       <hr class="my-4 md:min-w-full" />
       <!-- Heading -->
-      <h6
-        class="md:min-w-full text-blueGray-500 text-xs font-bold block pt-1 pb-4 no-underline cursor-pointer"
+
+      <a
+        routerLink="/dashboard/doctors"
+        [routerLinkActive]="['bg-blue-400']"
+        class="md:min-w-full text-blueGray-500 px-2 rounded text-xs font-bold block pt-1 pb-4 no-underline cursor-pointer"
       >
         Docteurs
-      </h6>
+      </a>
+      <hr class="my-4 md:min-w-full" />
+      <!-- Heading -->
+
+      <a
+        routerLink="/dashboard/settings"
+        [routerLinkActive]="['bg-blue-400']"
+        class="md:min-w-full text-blueGray-500 px-2 rounded text-xs font-bold block pt-1 pb-4 no-underline cursor-pointer"
+      >
+        settings
+      </a>
 
       <div class="flex absolute bottom-0">
         <h6
