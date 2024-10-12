@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { LayoutsComponent } from './layouts/layouts.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,

@@ -7,6 +7,7 @@ import { DashboardComponent } from './views/dashboard/dashboard.component';
 import { AppointmentsComponent } from './views/appointments/appointments.component';
 import { CarnetComponent } from './views/carnet/carnet.component';
 import { HomeDashboardComponent } from './views/home-dashboard/home-dashboard.component';
+import { DoubleFactorComponent } from './views/auth/double-factor/double-factor.component';
 import { SettingsComponent } from './views/settings/settings.component';
 import { DoctorsComponent } from './views/doctors/doctors.component';
 
@@ -17,7 +18,12 @@ export const routes: Routes = [
         path: "auth",
         children: [
             { path: "login", component: LoginComponent },
-            { path: "register", component: RegisterComponent }
+            { path: "register", component: RegisterComponent },
+            { path: "double-factor", component: DoubleFactorComponent },
+
+            
+
+
         ]
     },
 
