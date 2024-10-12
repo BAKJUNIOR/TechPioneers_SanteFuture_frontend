@@ -1,0 +1,109 @@
+<div class="container mx-auto max-w-full max-h-full sm:py-[27.5px] bg-white">
+  <div
+    class="flex flex-col md:flex-row content-center items-center bg-white opacity-95 justify-between h-full shadow-2xl mt-32 sm:mt-4 sm:mx-32 rounded-xl"
+  >
+    <div class="hidden md:flex justify-start items-start gap-8">
+      <div class="sm:relative w-full h-[513px] mx-4">
+        <div
+          class="w-[25rem] h-[25rem] left-[54.55px] top-[66.28px] absolute bg-blue-600 rounded-full"
+        ></div>
+        <div
+          class="w-[71.38px] h-[71.38px] left-[0.69px] top-[77.32px] absolute bg-blue-600 rounded-full"
+        ></div>
+        <img
+          class="w-[370.70px] h-auto sm:mx-auto sm:left-20 -mt-3 relative"
+          src="assets/img/medium-shot-smiley-doctor-with-coat.png"
+          alt="Technology"
+        />
+        <div
+          class="w-[40.88px] h-[40.88px] left-[471.81px] top-[441.36px] absolute bg-blue-600 rounded-full"
+        ></div>
+      </div>
+    </div>
+
+    <!-- Login form section -->
+    <div
+      class="relative flex flex-col min-w-0 break-words w-full md:w-1/2 mb-6 rounded-lg bg-white justify-center text-center"
+    >
+      <div class="flex-auto px-4 lg:px-10 py-10 pt-10 h-full mt-10">
+        <div class="text-blueGray-400 text-center mx-4 mb-3 font-bold">
+          <a [routerLink]="['/']">
+            <img
+              class="w-[300px] mx-auto mb-5"
+              src="assets/img/logo-sante.png"
+              alt="Technology"
+            />
+          </a>
+          <!-- <p class="text-3xl font-medium mt-3">{{ title }}</p> -->
+          <!-- <p class="text-xs text-gray-500 font-mono mt-3">{{ description }}</p> -->
+        </div>
+
+        <!-- Buttons Roles -->
+        <div class="flex flex-row w-full">
+          <div class="flex flex-row w-full justify-center space-x-3">
+            <p class="text-blue-600 text-2xl font-bold">S'inscrire</p>
+          </div>
+        </div>
+
+        <!-- Form login -->
+        <div class="flex mx-4 md:mx-2 mt-10">
+          <div class="flex flex-col w-full space-y-6">
+            <!-- Email input -->
+            <div class="flex flex-row relative w-full mb-3 space-x-2">
+              <input
+                type="email"
+                class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                placeholder="admin@hospital.org"
+              />
+              <input
+                type="email"
+                class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                placeholder="admin@hospital.org"
+              />
+            </div>
+
+            <!-- Password input -->
+            <div class="relative w-full mb-3">
+              <input
+                type="password"
+                class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                placeholder="********"
+              />
+            </div>
+
+            <!-- Remember me & Forgot password -->
+            <div class="flex justify-between">
+              <label class="inline-flex items-center cursor-pointer">
+                <input
+                  id="customCheckLogin"
+                  type="checkbox"
+                  class="form-checkbox border-0 text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150 rounded"
+                />
+                <span class="ml-2 text-sm font-light text-blueGray-600"
+                  >Remember me</span
+                >
+              </label>
+              <a
+                [routerLink]="['/auth/register']"
+                class="inline-flex items-center underline text-sm text-blue-500 cursor-pointer"
+              >
+                Déjà un compte ?
+              </a>
+            </div>
+
+            <!-- Submit button -->
+            <div class="text-center flex mt-10">
+              <button
+                class="bg-blue-500 text-white active:bg-blue-300 hover:bg-slate-400 text-sm font-bold uppercase px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
+                type="button"
+              >
+                Créer un compte
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- End Form login -->
+      </div>
+    </div>
+  </div>
+</div>

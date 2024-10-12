@@ -1,0 +1,75 @@
+@if (isModalOpen) {
+    <div class="relative z-10 " aria-labelledby="modal-title">
+      <div
+        class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity "
+        aria-hidden="true"
+      ></div>
+  
+      <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+        <div
+          class="flex flex-row min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
+        >
+          <div
+            class="relative transform overflow-hidden rounded-lg bg-rose-300 text-left shadow-xl transition-all  translate-x-4 sm:my-8 sm:w-full sm:max-w-4xl"
+          >
+            <div
+              class="flex flex-row justify-between items-center py-12 w-full px-6"
+            >
+              <div
+                class="flex flex-row md:flex-row justify-between items-center w-full md:px-4 px-0"
+              >
+                <div class="flex justify-center items-center gap-8">
+                  <div class="w-full">
+                    <img
+                      class="md:w-[370.70px] w-2/3 mx-auto h-auto sm:mx-auto rounded-md md:left-20 mt-1"
+                      src="assets/img/Octobre-rose.png"
+                      alt="Technology"
+                    />
+                  </div>
+                </div>
+  
+                <div
+                  class="flex flex-col justify-start items-start gap-8 w-full max-w-[420px]"
+                >
+                  <div class="w-[94px] h-[7px] bg-white"></div>
+                  <div
+                    class="text-[#252b42] text-4xl md:text-5xl font-bold font-montserrat leading-tight tracking-tight"
+                  >
+                    Octobre rose
+                  </div>
+                  <div
+                    class="flex w-full text-gray-700 text-xl md:text-2xl font-normal font-montserrat leading-tight tracking-tight"
+                  >
+                    Mois de sensibilisation au cancer de sein
+                    <br />Prendre soin de nos patients est notre combat
+                  </div>
+
+                   <!-- Button donate -->
+                 <div
+                 class="flex flex-row justify-center items-center gap-4 w-full max-w-[420px]">
+                 <a href="https://qrfy.io/r/4blV4c_tje" target="_blank" class="bg-blue-400 border border-white px-2 shadow-md py-1 rounded-full text-white">Faire un don</a>
+               </div>
+                <!-- End Button donate -->
+                </div>
+
+               
+              </div>
+            </div>
+            <!-- Button -->
+            <div class="flex w-full justify-center mb-5">
+              <button
+                (click)="closeModal()"
+                class="relative w-32 h-10 flex items-center justify-center border border-transparent text-rose-500 font-medium rounded-full bg-white hover:bg-rose-100 transition duration-300 ease-in-out shadow-md"
+              >
+                Accéder au site
+              </button>
+            </div>
+  
+            <!-- End Button -->
+          </div>
+        </div>
+      </div>
+    </div>
+    }
+
+    <!-- <app-donate></app-donate> -->
