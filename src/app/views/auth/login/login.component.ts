@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { onErrorResumeNext } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -9,4 +10,8 @@ import { RouterLink } from '@angular/router';
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
+
+  onSubmit() {
+    throw onErrorResumeNext('error')
+  }
 }

@@ -20,10 +20,6 @@ export const routes: Routes = [
             { path: "login", component: LoginComponent },
             { path: "register", component: RegisterComponent },
             { path: "double-factor", component: DoubleFactorComponent },
-
-            
-
-
         ]
     },
 
@@ -49,11 +45,6 @@ export const routes: Routes = [
             { path: "doctors", component: DoctorsComponent}
         ]
     },
-
-    // Appointment route
-    // {
-    //     path
-    // }
 
     // Consultation route
     {

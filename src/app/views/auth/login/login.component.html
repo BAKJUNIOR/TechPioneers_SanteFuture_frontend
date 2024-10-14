@@ -49,12 +49,13 @@
         </div>
 
         <!-- Form login -->
-        <div class="flex mx-4 md:mx-24 mt-10">
+        <form (ngSubmit)="onSubmit()" class="flex mx-4 md:mx-24 mt-10">
           <div class="flex flex-col w-full space-y-6">
             <!-- Email input -->
             <div class="relative w-full mb-3">
               <input
                 type="email"
+                [name]="['email']"
                 class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 placeholder="admin@hospital.org"
               />
@@ -64,6 +65,7 @@
             <div class="relative w-full mb-3">
               <input
                 type="password"
+                [name]="['password']"
                 class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 placeholder="********"
               />
@@ -87,31 +89,32 @@
                 Mot de passe oublié ?
               </label>
             </div>
-
+            <!-- routerLink="/dashboard" -->
             <!-- Submit button -->
             <div class="text-center flex mt-10">
-              <a routerLink="/dashboard"
+              <button
+                (ngSubmit)="onSubmit()"
                 class="bg-blue-500 text-white active:bg-blue-300 hover:bg-slate-400 text-sm font-bold uppercase px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-                type="button"
+                type="submit"
               >
                 Se connecter
-              </a>
+              </button>
             </div>
           </div>
 
           <!-- End Form login -->
-        </div>
+        </form>
         <div class="flex">
           <div class="flex w-full justify-center items-center">
             <span class="text-gray-700 text-center text-xs font-light">
-              Vous n'avez pas de compte? 
+              Vous n'avez pas de compte?
             </span>
 
             <a
               [routerLink]="['/auth/register']"
               class="flex items-center justify-center text-sm font-light text-blue-500 hover:text-blue-600 underline"
             >
-                 Créer un compte
+              Créer un compte
             </a>
           </div>
         </div>
