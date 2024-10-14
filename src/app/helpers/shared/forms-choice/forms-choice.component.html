@@ -1,0 +1,170 @@
+@if (isFormChoice) {
+<div
+  class="flex flex-col md:w-full w-[22rem] h-screen justify-center bg-blue-50 px-4"
+>
+  <div class="flex flex-col -mt-32 mx-auto">
+    <div
+      class="w-[654px] left-[53px] text-black text-[32px] font-light font-sans leading-none tracking-tight"
+    >
+      <span class="flex-nowrap">
+        Bonjour, merci de bien répondre au
+        <p class="py-2">questionnaire</p>
+      </span>
+    </div>
+    <div
+      class="left-[54px] text-center mt-10 text-black text-xl font-bold font-['Montserrat'] leading-none tracking-tight"
+    >
+      Cette consultation est-elle pour vous ou pour un proche ?
+    </div>
+
+    <!-- Questionnement -->
+    <div class="flex mx-20 mt-10 shadow-md rounded-full">
+      <div
+        (click)="choiceOptionOne()"
+        [ngClass]="{ 'bg-white': !isForMe, 'text-white': isForMe,'border-white': !isForMe }"
+        [className]="['flex bg-blue-500 w-full text-black justify-center items-center h-[46px] px-45 border-r-transparent left-[54px] top-[632px] rounded-l-full border border-blue-500 cursor-pointer']"
+      >
+        <span
+          class="text-xl font-light mx-auto justify-center items-center left-0 right-0"
+          >Pour vous</span
+        >
+      </div>
+      <div
+        (click)="choiceOptionTwo()"
+        [ngClass]="{ 'bg-white': !isNotFormMe, 'text-white': isNotFormMe, 'border-white': !isNotFormMe }"
+        class="flex w-full bg-blue-500 items-center text-black justify-center h-[46px] px-45 border-l-transparent left-[54px] top-[632px]  rounded-r-full border border-blue-500 cursor-pointer"
+      >
+        <span
+          class="text-xl font-light mx-auto justify-center items-center left-0 right-0"
+          >Pour un proche</span
+        >
+      </div>
+    </div>
+    <!-- End Questionnement -->
+
+    <!-- Buttons -->
+    <div
+      class="flex flex-row justify-between items-center w-full h-[50px] mt-32 space-x-80 px-4"
+    >
+      <div
+        class="flex w-1/2 justify-center items-center h-[46px] top-[688px] bg-white rounded-full border border-blue-500 cursor-pointer"
+      >
+        <span
+          class="text-blue-500 text-xl font-serif mx-auto justify-center items-center left-0 right-0"
+          >Précédent</span
+        >
+      </div>
+
+      <!-- ---- -->
+
+      <div
+        (click)="toggleFormChoiceNext()"
+        class="flex w-1/2 bg-blue-500 hover:bg-blue-600 justify-center items-center h-[46px] top-[688px] rounded-full border border-white cursor-pointer"
+      >
+        <span
+          class="text-white text-xl font-serif mx-auto justify-center items-center left-0 right-0"
+          >Suivant</span
+        >
+      </div>
+    </div>
+    <!-- End Buttons -->
+  </div>
+</div>
+} @else {
+<!-- Choice one -->
+<div
+  class="flex flex-col md:w-full w-[22rem] h-screen justify-center bg-blue-100 px-4"
+>
+  <div class="flex flex-col -mt-32 mx-auto">
+    <div
+      class="w-[654px] left-[53px] text-black text-[32px] font-light font-sans leading-none tracking-tight"
+    >
+      <span class="flex-nowrap">
+        Bonjour, merci de bien répondre au
+        <p class="py-2">questionnaire</p>
+      </span>
+    </div>
+    <div
+      class="left-[54px] text-center mt-10 text-black text-xl font-bold font-['Montserrat'] leading-none tracking-tight"
+    >
+      Parmi ces symptômes veuillez cocher ceux qui vous concernent :
+    </div>
+
+    <!-- Questionnement -->
+    <div [className]="['flex flex-col space-y-4 mx-20 mt-10']">
+      <div
+        (click)="choiceSymptomOne()"
+        [ngClass]="{ 'bg-white': !choiceOptOne, 'text-white': choiceOptOne }"
+        [className]="[
+          'flex w-full bg-blue-500 justify-center text-blue-500 items-center h-[46px] px-45 left-[54px] top-[632px]  rounded-full border border-blue-500 cursor-pointer'
+        ]"
+      >
+        <span
+          class="text-sm font-light mx-auto justify-center items-center left-0 right-0"
+          >Je présente des brûlures, des picotements ou des douleurs lorsque
+          j’urine.</span
+        >
+      </div>
+
+      <div
+        (click)="choiceSymptomTwo()"
+        [ngClass]="{ 'bg-white': !choiceOptTwo, 'text-white': choiceOptTwo }"
+        [className]="[
+          'flex w-full bg-blue-500 justify-center text-blue-500 items-center h-[46px] px-45 left-[54px] top-[632px]  rounded-full border border-blue-500 cursor-pointer'
+        ]"
+      >
+        <span
+          class="text-sm font-light mx-auto justify-center items-center left-0 right-0"
+          >J'ai des maux de tête et des vertiges.</span
+        >
+      </div>
+      <div
+        (click)="choiceSymptomThree()"
+        [ngClass]="{ 'bg-white': !choiceOptThree, 'text-white': choiceOptThree }"
+        [className]="[
+          'flex w-full bg-blue-500 justify-center text-blue-500 items-center h-[46px] px-45 left-[54px] top-[632px]  rounded-full border border-blue-500 cursor-pointer'
+        ]"
+      >
+        <span
+          class="text-sm font-light mx-auto justify-center items-center left-0 right-0"
+          >J'ai une forte migraine des maux au niveau des yeux.</span
+        >
+      </div>
+    </div>
+    <!-- End Questionnement -->
+
+    <!-- Buttons -->
+    <div
+      [className]="[
+        'flex flex-row justify-between items-center w-full h-[50px] mt-24 space-x-80 px-4'
+      ]"
+    >
+      <div
+        (click)="toggleFormChoicePrevious()"
+        class="flex w-1/2 justify-center items-center h-[46px] top-[688px] bg-white rounded-full border border-blue-200 cursor-pointer"
+      >
+        <span
+          class="text-blue-500 text-xl font-serif mx-auto justify-center items-center left-0 right-0"
+          >Précédent</span
+        >
+      </div>
+
+      <!-- ---- -->
+
+      <div
+        class="flex w-1/2 bg-blue-500 justify-center items-center h-[46px] top-[688px] rounded-full border border-white cursor-pointer"
+      >
+        <a [routerLink] = "['/auth/login']"
+          class="text-white text-xl font-serif mx-auto justify-center items-center left-0 right-0"
+          >Suivant</a
+        >
+      </div>
+    </div>
+    <!-- End Buttons -->
+  </div>
+</div>
+<!-- End Choice one -->
+}
+
+<!-- Choice two -->
+<!-- End Choice two -->

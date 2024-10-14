@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SidebarComponent } from '../components/sidebar/sidebar.component';
-import { NavbarsComponent } from '../components/navbars/navbars.component';
+import { SidebarComponent } from '../helpers/shared/sidebar/sidebar.component';
+import { NavbarsComponent } from '../helpers/shared/navbars/navbars.component';
 import { CarnetComponent } from '../views/carnet/carnet.component';
 
 @Component({
@@ -8,8 +8,6 @@ import { CarnetComponent } from '../views/carnet/carnet.component';
   standalone: true,
   imports: [SidebarComponent, NavbarsComponent],
   templateUrl: './layouts.component.html',
-  styleUrl: './layouts.component.css'
+  styleUrl: './layouts.component.css',
 })
-export class LayoutsComponent {
-
-}
+export class LayoutsComponent {}
