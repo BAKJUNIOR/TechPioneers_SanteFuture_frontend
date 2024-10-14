@@ -1,55 +1,157 @@
-<div [className]="['flex flex-row h-full bg-green-500 -ml-8 w-full']">
+<div [className]="['flex flex-row h-screen -ml-0 md:-ml-8 bg-slate-200']">
   <app-layouts></app-layouts>
   <div
     [className]="[
-      'flex flex-col w-full md:w-full md:max-h-full max-h-full py-12 xl:mb-0 bg-blue-50 mt-12'
+      'flex flex-col w-full md:w-full md:h-full h-full py-12 xl:mb-0 bg-slate-200 mt-12'
     ]"
   >
-    <div class="flex mx-4">
-      <table class=" table bg-white w-full items-center justify-center rounded spy">
-        <thead class="">
-          <th class="font-bold text-xs">Id</th>
-          <th class="font-bold text-xs">Titre</th>
-          <th class="font-bold text-xs">Created by</th>
-          <th class="font-bold text-xs">Date</th>
-          <th class="font-bold text-xs">Diseases</th>
-          <th class="font-bold text-xs">Actions</th>
-        </thead>
-        <tbody>
-          <tr class="">
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-          </tr>
-          <tr class="">
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-          </tr>
-          <tr class="">
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-          </tr>
-          <tr class="">
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-            <td class="text-center">sss</td>
-          </tr>
-        </tbody>
-      </table>
+
+  <div [className]="['mx-4 font-bold text-xl text-gray-500']">Rendez-vous</div>
+    
+    <div class="w-full mb-12 xl:mb-0 px-4 mx-auto mt-10">
+      
+      <div
+        class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-md rounded"
+      >
+        <div class="rounded-t mb-0 px-4 py-3 border-0">
+          <div class="flex flex-wrap items-center">
+            <div class="relative w-full px-4 max-w-full flex-grow flex-1">
+              <span class="font-bold text-base text-blue-700">
+                Table de Rendez-vous
+              </span>
+            </div>
+            <div
+              [className]="[
+                'relative w-full px-4 space-x-2 max-w-full flex-grow flex-1 text-right'
+              ]"
+            >
+              <input
+                [className]="['border w-2/3 rounded p-1 shadow-md']"
+                type="text"
+                [placeholder]="['Recherche...']"
+              />
+              <button
+                [className]="[
+                  'bg-blue-500 px-2 py-1 rounded cursor-pointer text-white shadow-md'
+                ]"
+              >
+                OK
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div [className]="['block w-full overflow-x-auto']">
+          <table
+            [className]="['items-center bg-transparent w-full border-collapse']"
+          >
+            <thead>
+              <tr>
+                <th
+                  [className]="[
+                    'px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left'
+                  ]"
+                >
+                  Nom
+                </th>
+                <th
+                  [className]="[
+                    'px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left'
+                  ]"
+                >
+                  Docteur
+                </th>
+                <th
+                  class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                >
+                  Genre
+                </th>
+                <th
+                  class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                >
+                  Temps
+                </th>
+                <th
+                  class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                >
+                  Téléphone
+                </th>
+                <th
+                  class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                >
+                  Email
+                </th>
+                <th
+                  class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                >
+                  Status
+                </th>
+                <th
+                  class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                >
+                  Type visite
+                </th>
+                <th
+                  class="px-6 bg-blueGray-50 text-blueGray-500 align-middle border border-solid border-blueGray-100 py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+                >
+                  Actions
+                </th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr>
+                <th
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left text-blueGray-700"
+                >
+                  test
+                </th>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  test
+                </td>
+                <td
+                  class="border-t-0 px-6 align-center border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  test
+                </td>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  test
+                </td>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  test
+                </td>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  test
+                </td>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  test
+                </td>
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  test
+                </td>
+
+                <td
+                  class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+                >
+                  test
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
     </div>
   </div>
 </div>
