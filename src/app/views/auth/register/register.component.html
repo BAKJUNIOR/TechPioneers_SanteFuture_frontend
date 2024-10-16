@@ -39,28 +39,28 @@
         </div>
 
         <!-- Buttons Roles -->
-        <div class="flex flex-row w-full">
-          <div class="flex flex-row w-full justify-center space-x-3">
-            <p class="text-blue-600 text-2xl font-bold">S'inscrire</p>
-          </div>
-        </div>
+       
 
         <!-- Form login -->
-        <form  (ngSubmit)="onSubmit()" class="flex mx-4 md:mx-2 mt-10">
+        <form formGroup="monFormulaire" (ngSubmit)="onSubmit()" class="flex mx-4 md:mx-2 mt-10">
           <div class="flex flex-col w-full space-y-6">
             <!-- Email input -->
             <div class="flex flex-row relative w-full mb-3 space-x-2">
               <input
-                type="text"
-                name="firstName"
-                class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                placeholder="admin@hospital.org"
-              />
+              type="text"
+              name="username"
+              placeholder="Username"
+              formControlName="username"
+
+
+              required
+            />
               <input
                 type="email"
-                name="lastName"
+                name="email"
                 class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                placeholder="admin@hospital.org"
+                placeholder="email"
+
               />
             </div>
 
@@ -71,6 +71,8 @@
                 name="password"
                 class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
                 placeholder="********"
+                formControlName="password"
+
               />
             </div>
 
