@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { UserService } from '../../../core/services/auth.service';
-import { User } from '../../../domains/user.model';
+import { AuthService } from '../../../core/services/auth.service';
 import {Router} from '@angular/router'
 import { NgModel } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -21,21 +20,27 @@ export class RegisterComponent {
 
   monFormulaire!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {}
-
-  ngOnInit(): void {
-    this.monFormulaire = this.formBuilder.group({
+  constructor(private fb: FormBuilder) {
+    this.monFormulaire = this.fb.group({
       username: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
+      firstName: ['', Validators.required],
+      lastName: ['', Validators.required],
+      numbers: ['', Validators.required],
+      dateOfBirth: ['', Validators.required],
+      adresse: [''],
+      gender: ['', Validators.required],
+      priorite: ['', Validators.required],
       password: ['', [Validators.required, Validators.minLength(6)]],
-      rememberMe: [false] // Pour la case "Se souvenir de moi"
     });
   }
 
-  onSubmit(): void {
+  onSubmit() {
     if (this.monFormulaire.valid) {
-      console.log(this.monFormulaire.value);
-      // Traitez ici les données du formulaire
+      const formValues = this.monFormulaire.value;
+
+      // Appel au service pour envoyer les données au backend
+     
     }
   }
 }
