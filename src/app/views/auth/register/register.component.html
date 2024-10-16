@@ -39,42 +39,115 @@
         </div>
 
         <!-- Buttons Roles -->
-        <div class="flex flex-row w-full">
-          <div class="flex flex-row w-full justify-center space-x-3">
-            <p class="text-blue-600 text-2xl font-bold">S'inscrire</p>
-          </div>
-        </div>
+       
 
         <!-- Form login -->
-        <form  (ngSubmit)="onSubmit()" class="flex mx-4 md:mx-2 mt-10">
+        <form formGroup="monFormulaire" (ngSubmit)="onSubmit()" class="flex mx-4 md:mx-2 mt-10">
           <div class="flex flex-col w-full space-y-6">
-            <!-- Email input -->
+        
+            <!-- Username and Email inputs -->
+            <div class="flex flex-row relative w-full mb-3 space-x-2">
+             
+             
+            </div>
+        
+            <!-- First Name and Last Name inputs -->
             <div class="flex flex-row relative w-full mb-3 space-x-2">
               <input
                 type="text"
                 name="firstName"
                 class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                placeholder="admin@hospital.org"
+                placeholder="Prénom"
+                formControlName="firstName"
+                required
               />
               <input
-                type="email"
+                type="text"
                 name="lastName"
                 class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                placeholder="admin@hospital.org"
+                placeholder="Nom de famille"
+                formControlName="lastName"
+                required
               />
             </div>
-
+        
+            <!-- Phone number input -->
+            <div class="relative w-full mb-3">
+              <input
+                type="text"
+                name="numbers"
+                class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                placeholder="Numéro de téléphone"
+                formControlName="numbers"
+                required
+              />
+            </div>
+        
+            <!-- Date of Birth input -->
+            <div class="relative w-full mb-3">
+              <input
+                type="date"
+                name="dateOfBirth"
+                class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                formControlName="dateOfBirth"
+                required
+              />
+            </div>
+        
+            <!-- Address input -->
+            <div class="relative w-full mb-3">
+              <input
+                type="text"
+                name="adresse"
+                class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                placeholder="Adresse"
+                formControlName="adresse"
+              />
+            </div>
+        
+            <!-- Gender select input -->
+            <div class="relative w-full mb-3">
+              <select
+                name="gender"
+                class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                formControlName="gender"
+                required
+              >
+                <option value="" disabled selected>Genre</option>
+                <option value="MASCULIN">Masculin</option>
+                <option value="FEMININ">Féminin</option>
+                <option value="AUTRE">Autre</option>
+              </select>
+            </div>
+        
+            <!-- Priority select input -->
+            <div class="relative w-full mb-3">
+              <select
+                name="priorite"
+                class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                formControlName="priorite"
+                required
+              >
+                <option value="" disabled selected>Priorité</option>
+                <option value="FAIBLE">Faible</option>
+                <option value="MOYENNE">Moyenne</option>
+                <option value="ELEVEE">Élevée</option>
+              </select>
+            </div>
+        
             <!-- Password input -->
             <div class="relative w-full mb-3">
               <input
                 type="password"
                 name="password"
                 class="border border-blue-500 px-3 py-3 placeholder-gray-500 text-gray-600 bg-white rounded-md text-sm focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-                placeholder="********"
+                placeholder="Mot de passe"
+                formControlName="password"
+                required
               />
             </div>
-
-            <!-- Remember me & Forgot password -->
+        
+            <!-- Remember me & Already have an account -->
             <div class="flex justify-between">
               <label class="inline-flex items-center cursor-pointer">
                 <input
@@ -82,30 +155,29 @@
                   type="checkbox"
                   class="form-checkbox border-0 text-blueGray-700 ml-1 w-5 h-5 ease-linear transition-all duration-150 rounded"
                 />
-                <span class="ml-2 text-sm font-light text-blueGray-600"
-                  >Remember me</span
-                >
+                <span class="ml-2 text-sm font-light text-blueGray-600">Se souvenir de moi</span>
               </label>
               <a
-                [routerLink]="['/auth/register']"
+                [routerLink]="['/auth/login']"
                 class="inline-flex items-center underline text-sm text-blue-500 cursor-pointer"
               >
                 Déjà un compte ?
               </a>
             </div>
-            <!-- [routerLink]="['/auth/double-factor']" -->
+        
             <!-- Submit button -->
             <div class="text-center flex mt-10">
               <button
-             
                 class="bg-blue-500 text-white active:bg-blue-300 hover:bg-slate-400 text-sm font-bold uppercase px-6 py-3 rounded-full shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
                 type="submit"
+              [routerLink]="['/auth/login']"
               >
                 Créer un compte
               </button>
             </div>
           </div>
         </form>
+        
         <!-- End Form login -->
       </div>
     </div>

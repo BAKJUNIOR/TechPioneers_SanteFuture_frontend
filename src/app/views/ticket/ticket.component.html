@@ -1,0 +1,88 @@
+<div class="flex h-screen">
+    <div class="w-1/4 bg-white-100 ">
+        <app-sidebar></app-sidebar>
+      
+    </div>
+  
+    <!-- Main Content -->
+    <div class="flex-1 bg-white-100 p-12 shadow-gray-200">
+        <h2 class="text-xl font-bold">Enregistrer consultation et générer ticket</h2>
+ 
+        <table class="table-auto w-full mb-6 border">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="text-left py-2 px-4">Nom et Prénom</th>
+              <th class="text-left py-2 px-4">Date de Naissance</th>
+              <th class="text-left py-2 px-4">Année</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2 px-4">
+                <input type="text" id="nom" value="N'guessan kama" class="w-full p-2 border rounded">
+              </td>
+              <td class="py-2 px-4">
+                <select id="dob-day" class="w-full p-2 border rounded">
+                  <option value="31" selected>31</option>
+                  <!-- Add other days -->
+                </select>
+              </td>
+              <td class="py-2 px-4">
+                <select id="dob-year" class="w-full p-2 border rounded">
+                  <option value="2001" selected>2001</option>
+                  <!-- Add other years -->
+                </select>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      
+        <!-- Services Section -->
+        <div class="mb-6">
+          <button class="bg-blue-500 text-white py-2 px-4 rounded">Ajouter un service</button>
+        </div>
+      
+        <!-- Services Table -->
+        <table class="w-full mb-6 table-auto">
+          <thead class="bg-gray-100">
+            <tr>
+              <th class="text-left py-2 px-4">Code</th>
+              <th class="text-left py-2 px-4">Service</th>
+              <th class="text-right py-2 px-4">Prix unitaire</th>
+              <th class="text-right py-2 px-4">Quantité</th>
+              <th class="text-right py-2 px-4">Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-b">
+              <td class="py-2 px-4">61804026</td>
+              <td class="py-2 px-4">Radiographie</td>
+              <td class="py-2 px-4 text-right">0.00</td>
+              <td class="py-2 px-4 text-right">1</td>
+              <td class="py-2 px-4 text-right">20000.00</td>
+            </tr>
+            <tr class="border-b">
+              <td class="py-2 px-4">61804026</td>
+              <td class="py-2 px-4">Echographie</td>
+              <td class="py-2 px-4 text-right">2450.00</td>
+              <td class="py-2 px-4 text-right">1</td>
+              <td class="py-2 px-4 text-right">2450.00</td>
+            </tr>
+            <tr>
+              <td colspan="5" class="py-2 px-4 text-right font-bold">Total Général:</td>
+              <td class="py-2 px-4 text-right font-bold">20000f</td>
+            </tr>
+          </tbody>
+        </table>
+      
+        <!-- Submit Button -->
+        <div class="text-right">
+          <button (click)="openModal()" class="bg-green-500 text-white py-2 px-4 rounded">
+            générer ticket
+          </button>
+        </div>
+      </div>
+      
+      
+  </div>
+  

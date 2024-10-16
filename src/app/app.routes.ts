@@ -10,6 +10,7 @@ import { HomeDashboardComponent } from './views/home-dashboard/home-dashboard.co
 import { DoubleFactorComponent } from './views/auth/double-factor/double-factor.component';
 import { SettingsComponent } from './views/settings/settings.component';
 import { DoctorsComponent } from './views/doctors/doctors.component';
+import { TicketComponent } from './views/ticket/ticket.component';
 
 export const routes: Routes = [
 
@@ -42,7 +43,8 @@ export const routes: Routes = [
             { path: "appointments", component: AppointmentsComponent},
             { path: "carnet", component: CarnetComponent},
             { path: "settings", component: SettingsComponent},
-            { path: "doctors", component: DoctorsComponent}
+            { path: "doctors", component: DoctorsComponent},
+            {path : "tickets", component: TicketComponent}
         ]
     },
 
