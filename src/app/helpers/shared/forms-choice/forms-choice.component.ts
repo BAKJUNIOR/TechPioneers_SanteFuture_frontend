@@ -1,16 +1,42 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { MedicalChatbotService } from '../../../core/services/medical-chatbot.service';
 
 @Component({
   selector: 'app-forms-choice',
   standalone: true,
-  imports: [NgClass, RouterLink],
+  imports: [NgClass, RouterLink, FormsModule],
   templateUrl: './forms-choice.component.html',
   styleUrl: './forms-choice.component.css',
 })
 export class FormsChoiceComponent {
-  // Initialisation du formulaire en mode choix
+  constructor(private medicalChatbotService: MedicalChatbotService) {}
+
+  listen() {
+    this.medicalChatbotService.startListening((transcript: string) => {
+      console.log('Vous avez dit:', transcript);
+      this.handleCommand(transcript);
+    });
+  }
+
+  handleCommand(command: string): void {
+    // Traiter la commande vocale
+    if (command.toLowerCase().includes('bonjour')) {
+      this.medicalChatbotService.speak('Bonjour, comment puis-je vous aider ?');
+    } else if (command.toLowerCase().includes('aide')) {
+      this.medicalChatbotService.speak('Je peux vous aider à trouver un médecin ou répondre à vos questions.');
+    } else {
+      this.medicalChatbotService.speak('Je n\'ai pas compris la commande.');
+    }
+  }
+
+  stopListening() {
+    this.medicalChatbotService.stopListening();
+  }
+
+  // // Initialisation du formulaire en mode choix
   isForMe = true;
   isNotFormMe = false;
 
@@ -18,16 +44,20 @@ export class FormsChoiceComponent {
   choiceOptTwo = false;
   choiceOptThree = false;
 
-  isFormChoice = true;
+  isFormChoice1 = true;
+  isFormChoice2 = false;
+  formPatient = false;
+  ticketForm = false;
 
-  // Button pour accéder au formulaire suivant
+  // // Button pour accéder au formulaire suivant
   toggleFormChoiceNext(): void {
-    this.isFormChoice = !this.isFormChoice;
+    this.isFormChoice1 = false
+    this.isFormChoice2 = true
   }
 
-  // Button pour retourner au formulaire précendant
+  // // Button pour retourner au formulaire précendant
   toggleFormChoicePrevious(): void {
-    this.isFormChoice = !this.isFormChoice;
+    this.isFormChoice1 = !this.isFormChoice1;
   }
 
   choiceOptionOne(): void {
@@ -64,4 +94,18 @@ export class FormsChoiceComponent {
       this.choiceOptTwo = false;
     }
   }
+
+  btnForm() {
+    this.formPatient = true;
+    this.isFormChoice1 = false;    
+    this.isFormChoice2 = false;
+  }
+
+  btnForm1() {
+    this.ticketForm = true;
+    this.formPatient = false;
+    this.isFormChoice1 = false;    
+    this.isFormChoice2 = false;
+  }
+
 }
