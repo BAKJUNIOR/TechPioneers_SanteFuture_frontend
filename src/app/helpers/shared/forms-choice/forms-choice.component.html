@@ -1,4 +1,4 @@
-@if (isFormChoice) {
+@if (isFormChoice1) {
 <div
   class="flex flex-col md:w-full w-[22rem] h-screen justify-center bg-blue-50 px-4"
 >
@@ -17,12 +17,23 @@
       Cette consultation est-elle pour vous ou pour un proche ?
     </div>
 
+    <!-- <div class="voice-assistant">
+      <button (click)="listen()">Commencer à écouter</button>
+      <button (click)="stopListening()">Arrêter l'écoute</button>
+    </div> -->
+
     <!-- Questionnement -->
     <div class="flex mx-20 mt-10 shadow-md rounded-full">
       <div
         (click)="choiceOptionOne()"
-        [ngClass]="{ 'bg-white': !isForMe, 'text-white': isForMe,'border-white': !isForMe }"
-        [className]="['flex bg-blue-500 w-full text-black justify-center items-center h-[46px] px-45 border-r-transparent left-[54px] top-[632px] rounded-l-full border border-blue-500 cursor-pointer']"
+        [ngClass]="{
+          'bg-white': !isForMe,
+          'text-white': isForMe,
+          'border-white': !isForMe
+        }"
+        [className]="[
+          'flex bg-blue-500 w-full text-black justify-center items-center h-[46px] px-45 border-r-transparent left-[54px] top-[632px] rounded-l-full border border-blue-500 cursor-pointer'
+        ]"
       >
         <span
           class="text-xl font-light mx-auto justify-center items-center left-0 right-0"
@@ -31,8 +42,12 @@
       </div>
       <div
         (click)="choiceOptionTwo()"
-        [ngClass]="{ 'bg-white': !isNotFormMe, 'text-white': isNotFormMe, 'border-white': !isNotFormMe }"
-        class="flex w-full bg-blue-500 items-center text-black justify-center h-[46px] px-45 border-l-transparent left-[54px] top-[632px]  rounded-r-full border border-blue-500 cursor-pointer"
+        [ngClass]="{
+          'bg-white': !isNotFormMe,
+          'text-white': isNotFormMe,
+          'border-white': !isNotFormMe
+        }"
+        class="flex w-full bg-blue-500 items-center text-black justify-center h-[46px] px-45 border-l-transparent left-[54px] top-[632px] rounded-r-full border border-blue-500 cursor-pointer"
       >
         <span
           class="text-xl font-light mx-auto justify-center items-center left-0 right-0"
@@ -70,7 +85,7 @@
     <!-- End Buttons -->
   </div>
 </div>
-} @else {
+} @if(isFormChoice2) {
 <!-- Choice one -->
 <div
   class="flex flex-col md:w-full w-[22rem] h-screen justify-center bg-blue-100 px-4"
@@ -84,14 +99,16 @@
         <p class="py-2">questionnaire</p>
       </span>
     </div>
+
     <div
       class="left-[54px] text-center mt-10 text-black text-xl font-bold font-['Montserrat'] leading-none tracking-tight"
     >
       Parmi ces symptômes veuillez cocher ceux qui vous concernent :
     </div>
 
-    <!-- Questionnement -->
     <div [className]="['flex flex-col space-y-4 mx-20 mt-10']">
+      <!--  -->
+
       <div
         (click)="choiceSymptomOne()"
         [ngClass]="{ 'bg-white': !choiceOptOne, 'text-white': choiceOptOne }"
@@ -120,7 +137,10 @@
       </div>
       <div
         (click)="choiceSymptomThree()"
-        [ngClass]="{ 'bg-white': !choiceOptThree, 'text-white': choiceOptThree }"
+        [ngClass]="{
+          'bg-white': !choiceOptThree,
+          'text-white': choiceOptThree
+        }"
         [className]="[
           'flex w-full bg-blue-500 justify-center text-blue-500 items-center h-[46px] px-45 left-[54px] top-[632px]  rounded-full border border-blue-500 cursor-pointer'
         ]"
@@ -131,9 +151,7 @@
         >
       </div>
     </div>
-    <!-- End Questionnement -->
 
-    <!-- Buttons -->
     <div
       [className]="[
         'flex flex-row justify-between items-center w-full h-[50px] mt-24 space-x-80 px-4'
@@ -149,22 +167,166 @@
         >
       </div>
 
-      <!-- ---- -->
-
       <div
         class="flex w-1/2 bg-blue-500 justify-center items-center h-[46px] top-[688px] rounded-full border border-white cursor-pointer"
       >
-        <a [routerLink] = "['/auth/login']"
+        <button
+          (click)="btnForm()"
           class="text-white text-xl font-serif mx-auto justify-center items-center left-0 right-0"
-          >Suivant</a
         >
+          Suivant
+        </button>
       </div>
     </div>
     <!-- End Buttons -->
   </div>
 </div>
 <!-- End Choice one -->
+
 }
+
+<!-- Formulaire patient -->
+@if(formPatient) {
+<div
+  class="flex flex-col md:w-full w-[22rem] h-screen justify-center bg-blue-100 px-14"
+>
+  <div class="flex flex-col mx-auto rounded py-10 -mt-12 bg-white">
+    <p class="text-center text-gray-700 font-bold">
+      Veuillez remplir le formulaire
+    </p>
+    <div [className]="['flex flex-col space-y-4 mx-20 mt-10']">
+      <!--  -->
+
+      <div
+        [className]="[
+          'flex w-full justify-center space-x-4 items-center h-[46px] px-45 left-[54px] top-[632px]  rounded-full cursor-pointer'
+        ]"
+      >
+        <input type="text" class="py-2 rounded bg-gray-200" placeholder="Nom" />
+        <input
+          type="text"
+          class="py-2 rounded bg-gray-200"
+          placeholder="Prenoms"
+        />
+      </div>
+
+      <div
+        [className]="[
+          'flex w-full justify-center space-x-4 items-center h-[46px] px-45 left-[54px] top-[632px]  rounded-full cursor-pointer'
+        ]"
+      >
+        <input
+          type="text"
+          class="py-2 w-full rounded bg-gray-200"
+          placeholder="email"
+        />
+      </div>
+
+      <div
+        [className]="[
+          'flex w-full justify-center space-x-4 items-center h-[46px] px-45 left-[54px] top-[632px]  rounded-full cursor-pointer'
+        ]"
+      >
+        <input
+          type="text"
+          class="py-2 rounded bg-gray-200"
+          placeholder="ville"
+        />
+        <input
+          type="text"
+          class="py-2 rounded bg-gray-200"
+          placeholder="Quartier"
+        />
+      </div>
+      <div
+        [className]="[
+          'flex w-full justify-center space-x-4 items-center h-[46px] px-45 left-[54px] top-[632px]  rounded-full cursor-pointer'
+        ]"
+      >
+        <input
+          type="text"
+          class="py-2 rounded bg-gray-200"
+          placeholder="Téléphone"
+        />
+        <input
+          type="text"
+          class="py-2 rounded bg-gray-200"
+          placeholder="Handicape"
+        />
+      </div>
+    </div>
+
+    <div
+      [className]="[
+        'flex flex-row justify-center items-center w-full h-[50px] mt-24 space-x-80 px-4'
+      ]"
+    >
+      <div
+        class="flex w-1/2 bg-blue-500 justify-center items-center h-[46px] top-[688px] rounded-full border border-white cursor-pointer"
+      >
+        <button
+          (click)="btnForm1()"
+          class="text-white text-xl font-serif mx-auto justify-center items-center left-0 right-0"
+        >
+          Suivant
+        </button>
+      </div>
+    </div>
+    <!-- End Buttons -->
+  </div>
+</div>
+}
+<!-- End Formulaire patient -->
+
+<!-- Ticket patient -->
+@if(ticketForm) {
+<div
+  class="flex flex-col md:w-full w-[22rem] h-screen justify-center bg-blue-100 px-14"
+>
+  <div class="flex flex-col mx-auto rounded py-10 -mt-12 bg-white">
+    <div class="flex items-center justify-center">
+        <img class="w-64 h-24" src="assets/img/logo-sante.png" alt="" />
+    </div>
+    <p class="text-center text-gray-700 font-bold">Votre ticket</p>
+    <div class="flex flex-col space-y-4 mx-20 mt-10">
+      <!--  -->
+
+      <div
+        class="flex flex-col justify-start w-[20rem] items-start rounded-full cursor-pointer"
+      >
+        <span class="text-gray-700">Numero ticket: <strong>TK-9930239</strong></span>
+        <div class="border border-dashed w-1/2 mt-2"></div>
+        <span class="text-gray-700 mt-5">Nom et prenoms: <strong>Ouattara Aminata</strong></span>
+        <div class="border border-dashed w-1/2 mt-2"></div>
+        <span class="text-gray-700 mt-5">Email: <strong>ouattaragmail.com</strong></span>
+        <div class="border border-dashed w-1/2 mt-2"></div>
+        <span class="text-gray-700 mt-5">Téléphone: <strong>07-79-90-23-43</strong></span>
+        <div class="border border-dashed w-1/2 mt-2"></div>
+        <span class="text-gray-700 mt-5">Heure de rendez-vous: <strong>09h45</strong></span>
+      </div>
+    </div>
+
+    <div
+      [className]="[
+        'flex flex-row justify-center items-center w-full mt-16 px-4'
+      ]"
+    >
+      <div
+        class="flex w-1/2 bg-red-500 justify-center items-center h-[46px] top-[688px] rounded-full border border-white cursor-pointer"
+      >
+        <button
+          (click)="btnForm()"
+          class="text-white text-xl font-serif mx-auto justify-center items-center left-0 right-0"
+        >
+          Télécharger le ticket
+        </button>
+      </div>
+    </div>
+    <!-- End Buttons -->
+  </div>
+</div>
+}
+<!-- End Ticket patient -->
 
 <!-- Choice two -->
 <!-- End Choice two -->
