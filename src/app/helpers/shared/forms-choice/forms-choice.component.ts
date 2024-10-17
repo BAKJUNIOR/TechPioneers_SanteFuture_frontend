@@ -2,7 +2,6 @@ import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
-import { MedicalChatbotService } from '../../../core/services/medical-chatbot.service';
 
 @Component({
   selector: 'app-forms-choice',
@@ -12,29 +11,6 @@ import { MedicalChatbotService } from '../../../core/services/medical-chatbot.se
   styleUrl: './forms-choice.component.css',
 })
 export class FormsChoiceComponent {
-  constructor(private medicalChatbotService: MedicalChatbotService) {}
-
-  listen() {
-    this.medicalChatbotService.startListening((transcript: string) => {
-      console.log('Vous avez dit:', transcript);
-      this.handleCommand(transcript);
-    });
-  }
-
-  handleCommand(command: string): void {
-    // Traiter la commande vocale
-    if (command.toLowerCase().includes('bonjour')) {
-      this.medicalChatbotService.speak('Bonjour, comment puis-je vous aider ?');
-    } else if (command.toLowerCase().includes('aide')) {
-      this.medicalChatbotService.speak('Je peux vous aider à trouver un médecin ou répondre à vos questions.');
-    } else {
-      this.medicalChatbotService.speak('Je n\'ai pas compris la commande.');
-    }
-  }
-
-  stopListening() {
-    this.medicalChatbotService.stopListening();
-  }
 
   // // Initialisation du formulaire en mode choix
   isForMe = true;
